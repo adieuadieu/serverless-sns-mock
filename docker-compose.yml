@@ -1,0 +1,13 @@
+version: '2.1'
+
+services:
+  sns-mock:
+    image: allthings/node
+    entrypoint: node /srv/www/src/server.js
+    volumes:
+      - ./:/srv/www:ro
+      - ../../:/repositories:ro
+    expose:
+      - 3030
+    ports:
+      - 127.0.0.1:3030:3030
